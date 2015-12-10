@@ -1,0 +1,45 @@
+<modification>  
+   <id>Price Filter</id>
+   <version>1.5.0</version>
+   <vqmver>2.4.1</vqmver>
+   <author>Ashok Kumar</author>
+   <file name="catalog/controller/product/category.php">
+      <operation>
+         <search position="before"><![CDATA[$category_info = $this->model_catalog_category->getCategory($category_id);]]></search>
+         <add><![CDATA[
+            //For Filter Range - Filter products based on slider price range
+            $isAjax = false;
+            if((isset($this->session->data['category_id']))&&($this->session->data['category_id']==$category_id))
+            {
+            if (isset($this->request->get['lower']))
+	    {
+		$isAjax = true;        
+                $this->session->data['lower']=$this->request->get['lower'];
+                $this->session->data['higher']=$this->request->get['higher'];
+            }    
+            }
+            else {	    
+           unset ($this->session->data['lower']);
+           unset ($this->session->data['higher']);
+            $this->session->data['category_id']=$category_id;        
+            }
+//End  Filter Range - Filter products based on slider price range
+            ]]></add>
+      </operation>
+   </file>
+    <file name="catalog/model/catalog/product.php">
+      <operation>
+         <search position="before"><![CDATA[if (!empty($data['filter_manufacturer_id'])) {]]></search>
+         <add><![CDATA[
+            //Filter products based on slider price range
+                
+            if ((isset($this->session->data['lower']))&&(isset($this->session->data['higher'])))
+            {
+            $sql .=  " AND p.price >='". $this->session->data['lower'] ." ' AND p.price <='". $this->session->data['higher'] ."'" ;
+            }
+           
+//Filter products based on price slider
+            ]]></add>
+      </operation>
+   </file>
+</modification>

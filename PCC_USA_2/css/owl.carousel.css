@@ -1,0 +1,64 @@
+/* 	Core Owl Carousel CSS File
+ *	v1.3.3 */
+ 
+/* clearfix */
+.owl-carousel .owl-wrapper:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+/* display none until init */
+.owl-carousel {display: none;position: relative;width: 100%;-ms-touch-action: pan-y; border: 0px solid red;}
+
+.owl-carousel .owl-wrapper {display: none;position: relative;-webkit-transform: translate3d(0px, 0px, 0px);}
+.owl-carousel .owl-wrapper-outer {overflow: hidden;position: relative;width: 100%;}
+
+.owl-carousel .owl-wrapper-outer.autoHeight {-webkit-transition: height 500ms ease-in-out;-moz-transition: height 500ms ease-in-out;-ms-transition: height 500ms ease-in-out;-o-transition: height 500ms ease-in-out;transition: height 500ms ease-in-out;}
+.owl-carousel .owl-item {float: left;}
+.owl-controls .owl-page,  .owl-controls .owl-buttons div {cursor: pointer;}
+.owl-controls {-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+/* mouse grab icon */
+.grabbing {cursor:url(grabbing.png) 8 8, move;}
+/* fix */
+.owl-carousel .owl-wrapper,  .owl-carousel .owl-item {
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility:    hidden;
+-ms-backface-visibility:     hidden;
+-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+}
+/************************************************************************************************/
+
+#dlc .owl-buttons{border: 0px solid red; width: 45px; top: -30px !important;right: -235px !important; position:absolute !important;}
+
+
+#piclist_zoom .owl-buttons{border: 0px solid red; width: 45px; top: -30px !important;right: 10px !important; position:absolute !important;}
+#piclist_zoom .owl-buttons .owl-prev{border: 0px solid blue; width: 20px; height: 20px;  position:relative !important; font-size: 0px !important; background:url(../images/arro-l.png) no-repeat center center; float:left;}
+#piclist_zoom .owl-buttons .owl-next{border: 0px solid blue; width: 20px; height: 20px;  position:relative !important; font-size: 0px !important; background:url(../images/arro-r.png) no-repeat center center; float:left; margin-left: 5px;}
+
+/*.owl-buttons .owl-prev2{border: 0px solid blue; width: 20px; height: 20px;  position:relative !important; font-size: 0px !important; background:url(../images/arro-l2.png) no-repeat center center; float:left;}
+.owl-buttons .owl-next2{border: 0px solid blue; width: 20px; height: 20px;  position:relative !important; font-size: 0px !important; background:url(../images/arro-r2.png) no-repeat center center; float:left; margin-left: 5px;}*/
+
+
+
+
+/*#recommended_products .owl-buttons{border: 0px solid red; width: 45px; top: -42px !important;right: 0px !important; position:absolute !important;}
+#recommended_products .owl-carousel .owl-item {float: left; padding: 2px 5px; border-right: 1px solid #eee;}
+#recommended_products .owl-carousel .owl-item:last-child {float: left; padding: 2px 5px; border-right: 0px solid #eee;}
+#recommended_products .prdimg { margin: 10px auto;text-align:center;border: 1px solid transparent; max-height: 93px; width: auto; display:table;}
+
+#recommended_products1 .owl-buttons{border: 0px solid red; width: 45px; top: -42px !important;right: 0px !important; position:absolute !important;}
+#recommended_products1 .owl-carousel .owl-item {float: left; padding: 2px 5px; border-right: 1px solid #eee;}
+#recommended_products1 .owl-carousel .owl-item:last-child {float: left; padding: 2px 5px; border-right: 0px solid #eee;}
+#recommended_products1 .prdimg { margin: 10px auto;text-align:center;border: 1px solid transparent; max-height: 93px; width: auto; display:table;}
+
+#recommended_products2 .owl-buttons{border: 0px solid red; width: 45px; top: -42px !important;right: 0px !important; position:absolute !important;}
+#recommended_products2 .owl-carousel .owl-item {float: left; padding: 2px 5px; border-right: 1px solid #eee;}
+#recommended_products2 .owl-carousel .owl-item:last-child {float: left; padding: 2px 5px; border-right: 0px solid #eee;}
+#recommended_products2 .prdimg { margin: 10px auto;text-align:center;border: 1px solid transparent; max-height: 93px; width: auto; display:table;}
+
+#related_products .owl-buttons{border: 0px solid red; width: 45px; top: -47px !important;right: 0px !important; position:absolute !important;}
+#related_products .rlprdimg{margin: 10px auto;border: 1px solid transparent; height: auto; width: 30px; display:table; float:left;}
+#related_products .rlprdimg img{height: auto; width: 100%; }
+#related_products .rldtl{ height: auto; width: 140px; display:table; float:left;}*/
+
+
+
+

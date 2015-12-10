@@ -1,0 +1,647 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Gold</title>
+<!-- base href="http://pcc.indiadootpmg.com/" -->
+<link href="http://pcc.indiadootpmg.com/image/data/cart.png" rel="icon">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="images/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="images/facebook.css">
+<script type="text/javascript" src="images/jquery-1.js"></script><script type="text/javascript" src="images/jquery-ui-1.js"></script>
+<link rel="stylesheet" type="text/css" href="images/jquery-ui-1.css">
+<script type="text/javascript" src="images/jquery.js"></script><script type="text/javascript" src="images/jquery_005.js"></script>
+<link rel="stylesheet" type="text/css" href="images/colorbox.css" media="screen">
+<script type="text/javascript" src="images/tabs.js"></script><script type="text/javascript" src="images/common.js"></script><script type="text/javascript" src="images/jquery_004.js"></script><script type="text/javascript" src="images/jquery_002.js"></script><script type="text/javascript" src="images/jquery_006.js"></script>
+<link rel="stylesheet" type="text/css" href="images/carousel.css" media="screen">
+<link rel="stylesheet" type="text/css" href="images/bx_styles.css">
+<script src="images/jquery_003.js" type="text/javascript"></script>
+<script>
+
+
+$(document).ready(function(){
+$('.ab').hover(function(){
+	$(this).prev('a').toggleClass('active');
+	});     
+$('.menuarrow').click(function () {
+  $('.menu-mobile').slideToggle('slow');
+});
+$('.mobile-fpart .column h3').click(function () {
+  $(this).next('.mobile-fpart .column ul').slideToggle('slow');
+});
+
+if (!$.browser.opera) {
+
+        $('select.select').each(function(){
+            var title = $(this).attr('title');
+            if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
+            $(this)
+                .css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+                .after('<span class="select">' + title + '</span>')
+                .change(function(){
+                    val = $('option:selected',this).text();
+                    $(this).next().text(val);
+                    })
+        });
+
+    };
+
+
+
+});
+
+</script>
+<style type="text/css">
+.product-info>.left + .right {
+	margin-left:268px
+}
+.product-info .image-additional {
+	width:258px
+}
+</style>
+
+<!--new-added-->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+<!--new-added-cl-->
+
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie7.css" /><![endif]--><!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie6.css" /><script type="text/javascript" src="catalog/view/javascript/DD_belatedPNG_0.0.8a-min.js"></script> <script type="text/javascript">DD_belatedPNG.fix('#logo img');
+</script> <![endif]-->
+</head>
+
+<body>
+<!--//-->
+<div class="main-wrapper">
+
+
+  <div class="main-header">
+  	<!--top-->
+    <div class="top-header"><!--100-->
+      <div class="top-header-inner container">
+      <div class="row">
+      
+        <div id="welcome" class="col-md-4">Welcome visitor you can <a href="http://pcc.indiadootpmg.com/index.php?route=account/login">login</a> or <a href="http://pcc.indiadootpmg.com/index.php?route=account/register">create an account</a>.</div>
+        
+        <form action="http://pcc.indiadootpmg.com/index.php?route=module/currency" method="post" enctype="multipart/form-data">
+          <div id="currency" class="col-md-4"><!--Currency<br />-->
+          <a title="Euro" onclick="$('input[name=\'currency_code\']').attr('value', 'EUR').submit(); $(this).parent().parent().submit();">€</a> <a title="Pound Sterling" onclick="$('input[name=\'currency_code\']').attr('value', 'GBP').submit(); $(this).parent().parent().submit();">£</a> <a title="US Dollar"><b>$</b></a>
+            <input name="currency_code" value="" type="hidden">
+            <input name="redirect" value="http://pcc.indiadootpmg.com/index.php?route=common/home" type="hidden">
+          </div>
+        </form>
+        
+        <div id="cart" class="col-md-4">
+          <div class="heading"><!--  <h4>Shopping Cart</h4>--><a><span id="cart-total">0 item(s) - $0.00</span></a><span class="cart-icon"></span></div>
+          <div class="content">
+            <div class="cart-arrow"></div>
+            <div class="empty">Your shopping cart is empty!</div>
+          </div>
+        </div>
+        
+        <div class="clear"></div>
+      </div></div>
+    </div>
+    
+    <!--middle-->
+    <!--<div class="bottom-header">100-->
+      <!--<div class="bottom-header-inner container" id="header">
+      <div class="row">
+      
+        <div id="logo"><a href="#"><img src="images/logo.png" title="PC Chandra" alt="PC Chandra"></a></div>
+        
+        <div class="links">
+        <a class="home" href="#"></a>
+        <a href="#" id="wishlist-total">Wish List (0)</a>
+        <a href="#">My Account</a>
+        <a href="#">Shopping Cart</a>
+        <a class="checkout-link" href="#">Checkout</a>
+        <a href="#">Contact Us</a>
+        </div>-->
+        
+        <!--<div id="search">
+          <div class="button-search"></div>
+          <input name="search" placeholder="Search" type="text">
+        </div>------------------>
+        
+      <!--</div></div>
+      <div class="clear"></div>
+    </div>-->
+    
+    <!--middle-->
+    <nav class="navbar navbar-inverse" role="navigation" style="">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="images/logo.png" title="PC Chandra" alt="PC Chandra"></a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="home" href="#">Home</a></li>
+            <li><a href="#" id="wishlist-total">Wish List (0)</a></li>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Shopping Cart</a></li>
+            <li><a class="checkout-link" href="#">Checkout</a></li>
+            <li><a href="#">Contact Us</a></li>
+            
+            <!--<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="portfolio-1-col.html">1 Column Portfolio</a></li>
+                <li><a href="portfolio-2-col.html">2 Column Portfolio</a></li>
+                <li><a href="portfolio-3-col.html">3 Column Portfolio</a></li>
+                <li><a href="portfolio-4-col.html">4 Column Portfolio</a></li>
+                <li><a href="portfolio-item.html">Single Portfolio Item</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    
+    <!--bottom-->
+    <div class="menu-main"><!--100-->
+      <div id="menu" class="container">
+        <ul class="pull-left">
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=18">Diamond</a>
+            <div style="" class="ab">
+              <ul>
+                <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=18_46">Necklace (1)</a></li>
+                <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=18_45">Pendant (1)</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25">Gold</a>
+            <div style="" class="ab">
+              <ul>
+                <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25_29">Bangles (1)</a></li>
+                <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25_28">Necklace (4)</a></li>
+              </ul>
+            </div>
+          </li>
+          <li style=" border-right:none; background:none !important"><a></a></li>
+        </ul>
+        
+        <div class="col-md-2 pull-right">
+        <div id="search" class="">
+          <div class="button-search"></div>
+          <input name="search" placeholder="Search" type="text">
+        </div>
+        </div>
+      </div>
+      <div class="shadow-menu"></div>
+    </div>
+    
+  </div>
+  
+  
+  <div class="wrapper">
+    <div id="notification"></div>
+    <div id="container" class="container">
+    <div id="content" class="row"><!--new-div-->
+    
+    
+      <div id="column-left" class="col-lg-3 col-md-3 col-sm-3" style="border: 0px solid red;"><!--id="column-left"-->
+      
+        <div class="box">
+          <div class="box-heading"><span>Specials</span></div>
+          <div class="box-content">
+            <div class="box-product ">
+              <!--1-->
+              <div class="box-product-in">
+                <div class="image"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;product_id=42"><img src="images/11-80x80.jpg" alt="Necklace" title="Necklace"></a></div>
+                <div class="rating"><img src="images/stars-0.png" alt="Based on 0 reviews."></div>
+                <div class="name"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;product_id=42">Necklace</a></div>
+                <div class="price"><span class="special-pro"></span><span class="price-old">$119.50</span> <span class="price-new">$107.75</span></div>
+                <div class="box-csc"><a onclick="addToCart('42');" class="button" title="Add to Cart">Add to Cart</a> <a class="wish-icon" title="Add to Wishlist" onclick="addToWishList('42');"></a><a class="compare-icon" title="Add to Compare" onclick="addToCompare('42');"></a></div>
+              </div>
+              <!--2-->
+              <div class="box-product-in">
+                <div class="image"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;product_id=30"><img src="images/images-80x80.jpg" alt="Necklace" title="Necklace"></a></div>
+                <div class="rating"><img src="images/stars-0.png" alt="Based on 0 reviews."></div>
+                <div class="name"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;product_id=30">Necklace</a></div>
+                <div class="price"><span class="special-pro"></span><span class="price-old">$119.50</span> <span class="price-new">$96.00</span></div>
+                <div class="box-csc"><a onclick="addToCart('30');" class="button" title="Add to Cart">Add to Cart</a> <a class="wish-icon" title="Add to Wishlist" onclick="addToWishList('30');"></a><a class="compare-icon" title="Add to Compare" onclick="addToCompare('30');"></a></div>
+              </div>
+            </div>
+          </div>
+        </div><!--box-->
+        
+        <div class="box">
+          <div class="box-heading"><span>Categories</span></div>
+          <div class="box-content">
+            <div class="box-category">
+            
+              <ul>
+                <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=18">Diamond (4)</a>
+                  <ul>
+                    <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=18_46">- Necklace (1)</a> </li>
+                    <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=18_45">- Pendant (1)</a> </li>
+                  </ul>
+                </li>
+                <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25" class="active">Gold (10)</a>
+                  <ul>
+                    <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25_29">- Bangles (1)</a> </li>
+                    <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25_28">- Necklace (4)</a> </li>
+                  </ul>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div><!--box-->
+        
+        <!--custom_banner-->
+        <div id="custom_banner0" class="custom_banner">
+          <div><a href="http://pcc.indiadootpmg.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7"><img src="images/images%25202-182x182.jpg" alt="Diamond Product" title="Diamond Product"></a></div>
+        </div>
+
+		<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('#banner0 div:first-child').css('display', 'block');
+});
+
+var banner = function() {
+	$('#banner0').cycle({
+		before: function(current, next) {
+			$(next).parent().height($(next).outerHeight());
+		}
+	});
+}
+
+setTimeout(banner, 2000);
+//--></script>
+
+		</div><!--column-left-->
+
+
+
+      <div class="col-lg-9 col-md-9" style="border: 0px solid green;"><!-- id="content"-->
+      	<!--breadcrumb-->
+        <div class="breadcrumb"><a href="http://pcc.indiadootpmg.com/index.php?route=common/home">Home</a> » <a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25">Gold</a></div>
+        <h1><span>Gold</span></h1>
+        
+        <div class="category-list">
+          <ul>
+            <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25_29">Bangles (1)</a></li>
+            <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25_28">Necklace (4)</a></li>
+          </ul>
+        </div>
+        
+        <div class="product-filter">
+          <div class="col-lg-6 col-md-6 hgt40">
+              <div class="display"> <a onclick="display('list');"><img src="images/list-active.png"></a> <img src="images/grid.png"></div>
+              <div class="product-compare"><a href="http://pcc.indiadootpmg.com/index.php?route=product/compare" id="compare-total">Product Compare (0)</a></div>
+          </div>
+          <div class="col-lg-6 col-md-6 hgt40">
+              <div class="limit"><b>Show:</b>
+                <select onchange="location = this.value;">
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;limit=15" selected="selected">15</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;limit=25">25</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;limit=50">50</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;limit=75">75</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;limit=100">100</option>
+                </select>
+              </div>
+              <div class="sort"><b>Sort By:</b>
+                <select onchange="location = this.value;">
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=p.sort_order&amp;order=ASC" selected="selected">Default</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=pd.name&amp;order=ASC">Name (A - Z)</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=pd.name&amp;order=DESC">Name (Z - A)</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=p.price&amp;order=ASC">Price (Low &gt; High)</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=p.price&amp;order=DESC">Price (High &gt; Low)</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=rating&amp;order=DESC">Rating (Highest)</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=rating&amp;order=ASC">Rating (Lowest)</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=p.model&amp;order=ASC">Model (A - Z)</option>
+                  <option value="http://pcc.indiadootpmg.com/index.php?route=product/category&amp;path=25&amp;sort=p.model&amp;order=DESC">Model (Z - A)</option>
+                </select>
+              </div>
+          </div>
+        </div><!--product-filter-->
+        
+        <div class="product-grid">
+        
+          <div class="inpg">
+            <div class="image"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=47"><img src="images/diamond-finish-bangle-32-80x80.jpg" title="Golden Bangles " alt="Golden Bangles "></a></div>
+            <div class="rating"><img src="images/stars-0.png" alt="Based on 0 reviews."></div>
+            <div class="name"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=47">Golden Bangles </a></div>
+            <div class="description">Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Mon..</div>
+            <div class="price">$119.50<br>
+              <span class="price-tax">Ex Tax: $100.00</span></div>
+            <div class="product-cwc">
+              <div class="cart">
+                <input value="Add to Cart" onclick="addToCart('47');" class="button" type="button">
+              </div>
+              <div class="wishlist"><a class="wish-text" onclick="addToWishList('47');">Add to Wish List</a> <a class="wish-icon" title="Add to Wishlist" onclick="addToWishList('47');"></a></div>
+              <div class="compare"><a class="compare-text" onclick="addToCompare('47');">Add to Compare</a> <a class="compare-icon" title="Add to Compare" onclick="addToCompare('47');"></a></div>
+            </div>
+          </div>
+          <div class="inpg">
+            <div class="image"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=30"><img src="images/images-80x80.jpg" title="Necklace" alt="Necklace"></a></div>
+            <div class="rating"><img src="images/stars-0.png" alt="Based on 0 reviews."></div>
+            <div class="name"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=30">Necklace</a></div>
+            <div class="description">Canon's press material for the EOS 5D states that it 'defines (a) new D-SLR category', while we're n..</div>
+            <div class="price">
+              <div class="special-pro"></div>
+              <span class="price-old">$119.50</span> <span class="price-new">$96.00</span><br>
+              <span class="price-tax">Ex Tax: $80.00</span></div>
+            <div class="product-cwc">
+              <div class="cart">
+                <input value="Add to Cart" onclick="addToCart('30');" class="button" type="button">
+              </div>
+              <div class="wishlist"><a class="wish-text" onclick="addToWishList('30');">Add to Wish List</a> <a class="wish-icon" title="Add to Wishlist" onclick="addToWishList('30');"></a></div>
+              <div class="compare"><a class="compare-text" onclick="addToCompare('30');">Add to Compare</a> <a class="compare-icon" title="Add to Compare" onclick="addToCompare('30');"></a></div>
+            </div>
+          </div>
+          <div class="inpg">
+            <div class="image"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=33"><img src="images/elegant-antique-handmade-pear-shape-chokker-gold-necklace-38.jpg" title="Necklace" alt="Necklace"></a></div>
+            <div class="rating"><img src="images/stars-0.png" alt="Based on 0 reviews."></div>
+            <div class="name"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=33">Necklace</a></div>
+            <div class="description">Imagine the advantages of going big without slowing down. The big 19" 941BW monitor combines wide as..</div>
+            <div class="price">$237.00<br>
+              <span class="price-tax">Ex Tax: $200.00</span></div>
+            <div class="product-cwc">
+              <div class="cart">
+                <input value="Add to Cart" onclick="addToCart('33');" class="button" type="button">
+              </div>
+              <div class="wishlist"><a class="wish-text" onclick="addToWishList('33');">Add to Wish List</a> <a class="wish-icon" title="Add to Wishlist" onclick="addToWishList('33');"></a></div>
+              <div class="compare"><a class="compare-text" onclick="addToCompare('33');">Add to Compare</a> <a class="compare-icon" title="Add to Compare" onclick="addToCompare('33');"></a></div>
+            </div>
+          </div>
+          <div class="inpg">
+            <div class="image"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=42"><img src="images/11-80x80.jpg" title="Necklace" alt="Necklace"></a></div>
+            <div class="rating"><img src="images/stars-0.png" alt="Based on 0 reviews."></div>
+            <div class="name"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=42">Necklace</a></div>
+            <div class="description">The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..</div>
+            <div class="price">
+              <div class="special-pro"></div>
+              <span class="price-old">$119.50</span> <span class="price-new">$107.75</span><br>
+              <span class="price-tax">Ex Tax: $90.00</span></div>
+            <div class="product-cwc">
+              <div class="cart">
+                <input value="Add to Cart" onclick="addToCart('42');" class="button" type="button">
+              </div>
+              <div class="wishlist"><a class="wish-text" onclick="addToWishList('42');">Add to Wish List</a> <a class="wish-icon" title="Add to Wishlist" onclick="addToWishList('42');"></a></div>
+              <div class="compare"><a class="compare-text" onclick="addToCompare('42');">Add to Compare</a> <a class="compare-icon" title="Add to Compare" onclick="addToCompare('42');"></a></div>
+            </div>
+          </div>
+          <div class="inpg">
+            <div class="image"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=49"><img src="images/stone-studded-bridal-gold-necklace-set-11-80x80.jpg" title="Necklace" alt="Necklace"></a></div>
+            <div class="rating"><img src="images/stars-0.png" alt="Based on 0 reviews."></div>
+            <div class="name"><a href="http://pcc.indiadootpmg.com/index.php?route=product/product&amp;path=25&amp;product_id=49">Necklace</a></div>
+            <div class="description">Samsung Galaxy Tab 10.1, is the world’s thinnest tablet, measuring 8.6 mm thickness, running with An..</div>
+            <div class="price">$236.99<br>
+              <span class="price-tax">Ex Tax: $199.99</span></div>
+            <div class="product-cwc">
+              <div class="cart">
+                <input value="Add to Cart" onclick="addToCart('49');" class="button" type="button">
+              </div>
+              <div class="wishlist"><a class="wish-text" onclick="addToWishList('49');">Add to Wish List</a> <a class="wish-icon" title="Add to Wishlist" onclick="addToWishList('49');"></a></div>
+              <div class="compare"><a class="compare-text" onclick="addToCompare('49');">Add to Compare</a> <a class="compare-icon" title="Add to Compare" onclick="addToCompare('49');"></a></div>
+            </div>
+          </div>
+          
+        </div><!--product-grid-->
+        
+        <div class="pagination">
+          <div class="results">Showing 1 to 5 of 5 (1 Pages)</div>
+        </div><!--pagination-->
+        
+      </div><!--column-right-->
+      
+      <script type="text/javascript"><!--
+function display(view) {
+	if (view == 'list') {
+		$('.product-grid').attr('class', 'product-list');
+		
+		$('.product-list > div').each(function(index, element) {
+			
+			html  = '<div class="right">';
+			
+			html += '  <div class="cart">' + $(element).find('.cart').html() + '</div>';
+			html += '  <div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
+			html += '  <div class="compare">' + $(element).find('.compare').html() + '</div>';
+			html += '</div>';			
+			
+			html += '<div class="left">';
+			
+			var image = $(element).find('.image').html();
+			
+			if (image != null) { 
+				html += '<div class="image">' + image + '</div>';
+			}
+			
+			var price = $(element).find('.price').html();
+			
+			if (price != null) {
+				html += '<div class="price">' + price  + '</div>';
+			}
+					
+			html += '  <div class="name">' + $(element).find('.name').html() + '</div>';
+			html += '  <div class="description">' + $(element).find('.description').html() + '</div>';
+			
+			var rating = $(element).find('.rating').html();
+			
+			if (rating != null) {
+				html += '<div class="rating">' + rating + '</div>';
+			}
+				
+			html += '</div>';
+
+						
+			$(element).html(html);
+		});		
+		
+		$('.display').html(' <img src="catalog/view/theme/althaina/image/list.png">  <a onclick="display(\'grid\');">  <img src="catalog/view/theme/althaina/image/grid-active.png"></a>');
+		
+		$.cookie('display', 'list'); 
+	} else {
+		$('.product-list').attr('class', 'product-grid');
+		
+		$('.product-grid > div').each(function(index, element) {
+			html = '';
+			
+			var image = $(element).find('.image').html();
+			
+			if (image != null) {
+			
+				html += '<div class="image">' + image + '</div>';
+			}
+			
+				var rating = $(element).find('.rating').html();
+			
+			if (rating != null) {
+				html += '<div class="rating">' + rating + '</div>';
+			}
+			
+			html += '<div class="name">' + $(element).find('.name').html() + '</div>';
+			html += '<div class="description">' + $(element).find('.description').html() + '</div>';
+			
+			var price = $(element).find('.price').html();
+			
+			if (price != null) {
+				html += '<div class="price">' + price  + '</div>';
+			}
+			
+		
+						
+			html += '<div class="product-cwc" ><div class="cart">' + $(element).find('.cart').html() + '</div>';
+			html += '<div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
+			html += '<div class="compare">' + $(element).find('.compare').html() + '</div></div>';
+			
+			$(element).html(html);
+		});	
+					
+		$('.display').html(' <a onclick="display(\'list\');"><img src="catalog/view/theme/althaina/image/list-active.png"></a>  <img src="catalog/view/theme/althaina/image/grid.png">');
+		
+		$.cookie('display', '');
+	}
+}
+
+view = $.cookie('display');
+
+if (view) {
+	display(view);
+} else {
+	display(''); 
+}
+
+
+//--></script>
+      
+     </div><!--row-end-->
+     <div class="clear"></div>
+     </div><!--container-->
+  </div><!--wrapper-->
+  
+  
+  <!-- Bottom Footer -->
+  <div id="bottom-footer">
+  
+    <div id="footer" class="container"> 
+    <div class="row">
+    
+      <!--  About Us -->
+      <div class="column col-lg-3 col-md-3 col-sm-3">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=information/information&amp;information_id=4">About Us</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=information/information&amp;information_id=6">Delivery Information</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+      <div class="column col-lg-3 col-md-3 col-sm-3">
+        <h3>Customer Service</h3>
+        <ul>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=information/contact">Contact Us</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=account/return/insert">Returns</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=information/sitemap">Site Map</a></li>
+        </ul>
+      </div>
+      <div class="column col-lg-3 col-md-3 col-sm-3">
+        <h3>Extras</h3>
+        <ul>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/manufacturer">Brands</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=account/voucher">Gift Vouchers</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=affiliate/account">Affiliates</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=product/special">Specials</a></li>
+        </ul>
+      </div>
+      <div class="column col-lg-3 col-md-3 col-sm-3">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=account/account">My Account</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=account/order">Order History</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=account/wishlist">Wish List</a></li>
+          <li><a href="http://pcc.indiadootpmg.com/index.php?route=account/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      
+    </div><!--row-->  
+    </div><!--container-->
+    
+    <div class="powered-main">
+      <div id="powered" class="container"> 
+      <div class="row">
+      
+        <div class=" col-sm-6 col-md-6 col-lg-6">
+        <div class="copyright"> COPYRIGHT © 2012 Design by <a href="http://focusthemes.com/">Focusthemes</a> </div>
+        </div>
+        <div class=" col-sm-6 col-md-6 col-lg-6"><!--  Payment -->
+        <div class="payment"> <a title="" href="" target="_blank"> <img src="images/payment.png"></a> </div>
+        </div>
+        		<div class="back-to-top" id="back-top"><a title="Back to Top" href="javascript:void(0)" class="backtotop"></a></div>
+      
+      </div><!--row-->
+      </div>
+    </div>
+    
+  </div> <!--End Bottom Footer -->
+  
+  
+  
+  
+  </div><!--main-wrapper-->
+
+
+<script type="text/javascript">$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {
+				$('#back-top').fadeIn();
+			} else {
+				$('#back-top').fadeOut();
+			}
+		});
+		});
+jQuery('.backtotop').click(function(){
+	jQuery('html, body').animate({scrollTop:0}, 'slow');
+});
+
+</script> <!--//--><script src="images/si.js" type="text/javascript"></script>
+<div style="display: none;" id="cboxOverlay"></div>
+<div style="display: none;" class="" id="colorbox">
+  <div id="cboxWrapper">
+    <div>
+      <div style="float: left;" id="cboxTopLeft"></div>
+      <div style="float: left;" id="cboxTopCenter"></div>
+      <div style="float: left;" id="cboxTopRight"></div>
+    </div>
+    <div style="clear: left;">
+      <div style="float: left;" id="cboxMiddleLeft"></div>
+      <div style="float: left;" id="cboxContent">
+        <div style="width: 0px; height: 0px; overflow: hidden; float: left;" id="cboxLoadedContent"></div>
+        <div style="float: left;" id="cboxLoadingOverlay"></div>
+        <div style="float: left;" id="cboxLoadingGraphic"></div>
+        <div style="float: left;" id="cboxTitle"></div>
+        <div style="float: left;" id="cboxCurrent"></div>
+        <div style="float: left;" id="cboxNext"></div>
+        <div style="float: left;" id="cboxPrevious"></div>
+        <div style="float: left;" id="cboxSlideshow"></div>
+        <div style="float: left;" id="cboxClose"></div>
+      </div>
+      <div style="float: left;" id="cboxMiddleRight"></div>
+    </div>
+    <div style="clear: left;">
+      <div style="float: left;" id="cboxBottomLeft"></div>
+      <div style="float: left;" id="cboxBottomCenter"></div>
+      <div style="float: left;" id="cboxBottomRight"></div>
+    </div>
+  </div>
+  <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+
+<!----------------------------------------------------new-added-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</body>
+</html>

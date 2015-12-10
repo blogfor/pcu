@@ -1,0 +1,36 @@
+
+
+.picZoomer{position: relative; background: #ffffff; border: 1px solid #cccccc; width: 402px;/*cursor:url(../images/plus-64.png),url(myBall.cur),auto;*/}
+.picZoomer-pic-wp{position: relative;overflow: hidden; margin: 0px auto !important;}
+.picZoomer-pic-wp:hover .picZoomer-cursor{display: block;}
+
+.picZoomer-zoom-pic{position: absolute;top: 0;left: 0;border: 0px solid #000;}
+.picZoomer-pic{width: 100%;height: 100%;/*height: auto;*/border: 0px solid #000;}
+.picZoomer-zoom-wp{display: none;position: absolute;z-index: 999;overflow: hidden;border: 1px solid #cccccc !important;}
+.picZoomer-cursor{display: none;cursor: crosshair !important;width: 30px;height: 30px;position: absolute;/*top: 50 !important;left: 50 !important; right: 50 !important; bottom: 50 !important;border-radius: 50%;background-color: rgba(0,0,0,.5);border: 1px solid #eee;*/}
+.picZoomCursor-ico{width: 23px;height: 23px;position: absolute;top: 40px;left: 40px;/*background: url(images/-zoom-ico.png) left top no-repeat;*/}
+
+
+
+
+/* custom style */
+.piclist{ background: #ffffff;padding-top: 15px;padding-bottom: 15px;padding-left: 23px; margin-bottom: 0px;border: 1px solid #cccccc;border-top: none; width: 402px;}
+.piclist li{display: inline-block;width: 70px;height: 75px; border: 0px solid #cccccc; z-index: 100 !important; cursor: pointer;}
+.piclist li img{width: 100%;height: auto;}
+/* custom style */
+.picZoomer-pic-wp,
+.picZoomer-zoom-wp{border: 1px solid #fff; background: #ffffff;}
+
+
+
+
+#piclist_zoom .owl-wrapper-outer {overflow: hidden;position: relative;width: 94% !important;z-index: 1 !important;}
+/*#piclist_zoom .owl-controls, .clickable{ background:#fc0 !important;}*/
+
+#piclist_zoom .owl-wrapper{z-index: 1 !important;}
+#piclist_zoom .owl-buttons{ top: 0px !important; width: auto !important; float: left !important;  left: 0px; right: 0px !important;z-index: 0 !important;}
+#piclist_zoom .owl-buttons .owl-prev{ height: 105px;background: #eeeeee url(../images/arro-l.png) no-repeat center center; left: 0px !important; cursor: pointer;}
+#piclist_zoom .owl-buttons .owl-next{ height: 105px;background: #eeeeee url(../images/arro-r.png) no-repeat center center; right: 0px !important;float: right !important;cursor: pointer;}
+
+
+

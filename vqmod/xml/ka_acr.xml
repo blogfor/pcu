@@ -1,0 +1,582 @@
+<modification>
+	<id>Abandoned Cart Recovery ver.2.3 - OpenCart 1.5.2.x - 1.5.6.x file modifications</id>
+	<version>2.3.4</version>
+	<vqmver>2.1.5</vqmver>
+	<author>karapuz (support@ka-station.com)</author>
+	<file name="admin/controller/common/header.php">
+		<operation>
+			<search position="after" index="1"><![CDATA[$this->url->link('localisation/order_status', 'token=]]></search>
+			<add><![CDATA[			//karapuz
+			if ($this->db->isKaInstalled('ka_acr')) {
+				$this->data['ka_abandoned_carts'] = $this->url->link('sale/ka_abandoned_carts', 'token=' . $this->session->data['token'], 'SSL');
+				$this->data['ka_reminder_emails'] = $this->url->link('localisation/ka_reminder_emails', 'token=' . $this->session->data['token'], 'SSL');
+			}
+			///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="admin/controller/sale/customer.php">
+		<operation>
+			<search position="before" index="1"><![CDATA[if (isset($this->request->post['newsletter'])) {]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			if (isset($this->request->post['acr_subscribed'])) {
+				$this->data['acr_subscribed'] = $this->request->post['acr_subscribed'];
+			} elseif (!empty($customer_info)) { 
+				$this->data['acr_subscribed'] = $customer_info['acr_subscribed'];
+			} else {
+				$this->data['acr_subscribed'] = '';
+			}			
+		}		
+		///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="admin/model/sale/customer.php">
+		<operation>
+			<search position="after" index="1"><![CDATA[$customer_id = $this->db->getLastId]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			$data['customer_id'] = $customer_id;
+			$this->load->model('sale/ka_abandoned_carts');
+			$this->model_sale_ka_abandoned_carts->insertAbandonedCart($data);
+		}
+		///karapuz]]></add>
+		</operation>
+		<operation>
+			<search position="after" index="1"><![CDATA[function editCustomer($customer_id,]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			$data['customer_id'] = $customer_id;
+			$this->load->model('sale/ka_abandoned_carts');
+			$abandoned_cart_id = $this->model_sale_ka_abandoned_carts->getAbandonedCartByCustomer($customer_id);
+			if ($abandoned_cart_id) {
+				$this->model_sale_ka_abandoned_carts->updateAbandonedCart($abandoned_cart_id, $data);
+			} else {				
+				$this->model_sale_ka_abandoned_carts->insertAbandonedCart($data);
+			}
+		}
+		///karapuz]]></add>
+		</operation>
+		<operation>
+			<search position="after" index="1"><![CDATA[* FROM " . DB_PREFIX . "customer WHERE customer_id =]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			if (!empty($query->row)) {
+				$acr_query = $this->db->query("SELECT acr_subscribed FROM " . DB_PREFIX . "ka_abandoned_carts
+					WHERE customer_id = '" . (int)$customer_id . "'"
+				);
+				$query->row['acr_subscribed'] = (!empty($acr_query->row['acr_subscribed']));
+			}
+		}
+		///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="admin/view/template/common/header.tpl">
+		<operation>
+			<search position="after" index="1"><![CDATA[echo $customer_group;]]></search>
+			<add><![CDATA[              <?php /* //karapuz */?>              <?php if (!empty($ka_abandoned_carts)) { ?>
+              <li><a href="<?php echo $ka_abandoned_carts; ?>"><?php echo $this->language->get('Abandoned Carts'); ?></a></li>
+              <?php } ?>
+              <?php /* ///karapuz */?>]]></add>
+		</operation>
+		<operation>
+			<search position="before" index="2"><![CDATA[echo $text_return;]]></search>
+			<add><![CDATA[              <?php /* //karapuz */?>              <?php if (!empty($ka_reminder_emails)) { ?>
+              <li><a href="<?php echo $ka_reminder_emails; ?>"><?php echo $this->language->get('Cart Reminder Emails'); ?></a></li>
+              <?php } ?>
+              <?php /* ///karapuz */?>]]></add>
+		</operation>
+	</file>
+	<file name="admin/view/template/sale/customer_form.tpl">
+		<operation>
+			<search position="before" index="1" offset="1"><![CDATA[<td><?php echo $entry_newsletter;]]></search>
+			<add><![CDATA[              <?php /* //karapuz */?>              <?php if (isset($acr_subscribed)) { ?>
+                <tr>
+                  <td><?php echo $this->language->get('Abandoned Cart Notification'); ?></td>
+                  <td><select name="acr_subscribed">
+                      <?php if ($acr_subscribed) { ?>
+                      <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                      <option value="0"><?php echo $text_disabled; ?></option>
+                      <?php } else { ?>
+                      <option value="1"><?php echo $text_enabled; ?></option>
+                      <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+                      <?php } ?>
+                    </select></td>
+                </tr>
+              <?php } ?>
+              <?php /* ///karapuz */?>]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/account/edit.php">
+		<operation>
+			<search position="before" index="1"><![CDATA[if (isset($this->request->post['email'])) {]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			if (isset($this->request->post['acr_subscribed'])) {
+				$this->data['acr_subscribed'] = $this->request->post['acr_subscribed'];
+			} elseif (!empty($customer_info)) { 
+				$this->data['acr_subscribed'] = $customer_info['acr_subscribed'];
+			} else {
+				$this->data['acr_subscribed'] = '';
+			}
+		}
+		///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/account/login.php">
+		<operation>
+			<search position="after" index="1"><![CDATA[->getCustomerByToken(]]></search>
+			<add><![CDATA[		   	//karapuz
+		   	if ($this->db->isKaInstalled('ka_acr')) {
+				if (preg_match("/^" . preg_quote(Customer::$ka_token_prefix) ."(.*)/", $this->request->get['token'], $matches)) {
+					$abandoned_cart = $this->model_account_customer->getAbandonedCartByToken($matches[1]);
+					if (!empty($abandoned_cart)) {
+					
+						if (empty($abandoned_cart['customer_id'])) {
+							$this->customer->loginGuest($abandoned_cart);
+
+							// keeps google tracking parameters in the URL
+							//							
+							$custom_params = array();
+							foreach (array('utm_source', 'utm_medium', 'utm_content', 'utm_campaign') as $param) {
+							  if (isset($this->request->get[$param])) {
+								$custom_params[] = $param . '=' . $this->request->get[$param];
+							  }
+							}
+							$custom_params = implode('&', $custom_params);
+							$this->redirect($this->url->link('checkout/cart', $custom_params, 'SSL'));
+							
+						} else {
+							$customer_info = $this->model_account_customer->getCustomer($abandoned_cart['customer_id']);
+						}
+					}
+				}
+		   	}
+			///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/checkout/confirm.php">
+		<operation>
+			<search position="after" index="1"><![CDATA[model_checkout_order->addOrder($data]]></search>
+			<add><![CDATA[			//karapuz
+			if ($this->db->isKaInstalled('ka_acr')) {
+				$this->customer->saveAbandonedCart(null, null, $this->session->data['order_id']);
+			}
+   			///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/checkout/guest.php">
+		<operation>
+			<search position="before" index="1"><![CDATA[this->response->setOutput(json_encode($json]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			$this->load->model('account/customer');
+			$customer = (isset($this->session->data['guest']) ? $this->session->data['guest'] : null);
+			$this->customer->saveAbandonedCart(null, $customer);
+		}
+		///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="catalog/model/account/customer.php">
+		<operation>
+			<search position="after" index="1"><![CDATA[function editCustomer($data) {]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			$this->db->query("UPDATE " . DB_PREFIX . "ka_abandoned_carts SET acr_subscribed = '" . intval($data['acr_subscribed']) . "' WHERE customer_id = '" . intval($this->customer->getId()) . "'");
+		}
+		///karapuz]]></add>
+		</operation>
+		<operation>
+			<search position="after" index="1"><![CDATA[DB_PREFIX . "customer WHERE customer_id =]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			if (!empty($query->row)) {
+				$acr_query = $this->db->query("SELECT acr_subscribed FROM " . DB_PREFIX . "ka_abandoned_carts
+					WHERE customer_id = '" . (int)$customer_id . "'"
+				);
+				$query->row['acr_subscribed'] = (!empty($acr_query->row['acr_subscribed']));
+			}
+		}
+		///karapuz]]></add>
+		</operation>
+		<operation>
+			<search position="before" index="1"><![CDATA[function getCustomerByToken(]]></search>
+			<add><![CDATA[	//karapuz
+	public function unsubscribeFromAcr($customer_id) {
+	
+		$this->db->query("UPDATE " . DB_PREFIX . "ka_abandoned_carts
+			SET acr_subscribed = 0
+			WHERE customer_id = '" . intval($customer_id) . "'"
+		);
+		
+		return true;
+	}
+
+
+	/*
+		AcrToken is used emails for unsubscribing from ACR
+	*/
+	public function getCustomerByAcrToken($token) {
+	
+		$query = $this->db->query("SELECT ac.* FROM " . DB_PREFIX . "ka_abandoned_carts ac
+			WHERE 
+				acr_token = '" . $this->db->escape($token) . "'"
+		);
+		
+		if (empty($query->row)) {
+			return false;
+		}
+		
+		if (!empty($query->row['cart'])) {
+			$query->row['cart'] = unserialize($query->row['cart']);
+		}
+
+		return $query->row;
+	}
+	
+	/*
+		KaToken is ised in place of the regular customer token
+	*/
+	public function getAbandonedCartByToken($token, $registered = false, $delete = false) {
+	
+		$valid_hours = 72;
+
+		$this->db->query("DELETE FROM " . DB_PREFIX . "ka_tokens WHERE 
+			TIMESTAMPDIFF(HOUR, created_at, NOW()) > '$valid_hours'"
+		);
+
+		$where = "kt.token = '" . $this->db->escape($token) . "' AND LENGTH(kt.token)>0";
+		if ($registered) {
+			$where .= " AND ac.customer_id > 0";
+		}
+		
+		$query = $this->db->query("SELECT ac.* FROM " . DB_PREFIX . "ka_abandoned_carts ac
+			INNER JOIN " . DB_PREFIX . "ka_tokens kt ON ac.abandoned_cart_id = kt.abandoned_cart_id
+			WHERE $where"
+		);
+		
+		if (empty($query->row)) {
+			return false;
+		}
+		
+		if (!empty($query->row['cart'])) {
+			$query->row['cart'] = unserialize($query->row['cart']);
+		}
+
+		$this->db->query("UPDATE " . DB_PREFIX . "ka_abandoned_carts SET link_opened = NOW() 
+			WHERE 
+				abandoned_cart_id = '" . intval($query->row['abandoned_cart_id']) . "'"
+		);
+		
+		if ($delete) {
+			$this->db->query("DELETE FROM " . DB_PREFIX . "ka_tokens WHERE 
+				abandoned_cart_id = " . intval($query->row['abandoned_cart_id'])
+			);
+		}
+		
+		return $query->row;
+	}
+	
+	public function getCustomerByKaToken($token) {
+	
+		$abandoned_cart = $this->getAbandonedCartByToken($token, true);
+		if (empty($abandoned_cart['customer_id'])) {
+			return false;
+		}
+		
+		$qry = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE 
+			customer_id = " . intval($abandoned_cart['customer_id'])
+		);
+		
+		return $qry->row;
+	}
+	
+	///karapuz]]></add>
+		</operation>
+		<operation>
+			<search position="after" index="1"><![CDATA[function getCustomerByToken(]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			if (preg_match("/^" . preg_quote(Customer::$ka_token_prefix) ."(.*)/", $token, $matches)) {
+				return $this->getCustomerByKaToken($matches[1]);
+			}
+		}
+		///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="catalog/model/checkout/order.php">
+		<operation>
+			<search position="before" index="1" offset="1"><![CDATA[if ($this->config->get('config_fraud_detection')]]></search>
+			<add><![CDATA[		   	//karapuz
+		   	if ($this->db->isKaInstalled('ka_acr')) {
+		   		$this->customer->clearAbandonedCartByOrderid($order_info['order_id']);
+		   	}
+   			///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="catalog/view/theme/default/template/account/edit.tpl">
+		<operation>
+			<search position="before" index="1" offset="1"><![CDATA[echo $entry_telephone;]]></search>
+			<add><![CDATA[        <?php /* //karapuz */?>        <?php if (isset($acr_subscribed)) { ?>
+          <tr>
+            <td><?php echo $this->language->get('Abandoned Cart Notification'); ?></td>
+            <td><select name="acr_subscribed">
+                <?php if ($acr_subscribed) { ?>
+                <option value="1" selected="selected"><?php echo $this->language->get('Enabled'); ?></option>
+                <option value="0"><?php echo $this->language->get('Disabled'); ?></option>
+                <?php } else { ?>
+                <option value="1"><?php echo $this->language->get('Enabled'); ?></option>
+                <option value="0" selected="selected"><?php echo $this->language->get('Disabled'); ?></option>
+                <?php } ?>
+              </select></td>
+          </tr>
+        <?php } ?>
+        <?php /* ///karapuz */?>]]></add>
+		</operation>
+	</file>
+	<file name="system/library/cart.php">
+		<operation>
+			<search position="before" index="1"><![CDATA[return $this->data;]]></search>
+			<add><![CDATA[		//karapuz
+		if ($this->db->isKaInstalled('ka_acr')) {
+			$this->customer->saveAbandonedCart();
+		}
+  		///karapuz]]></add>
+		</operation>
+		<operation>
+			<search position="after" index="1"><![CDATA[public function clear(]]></search>
+			<add><![CDATA[  		//karapuz
+  		if ($this->db->isKaInstalled('ka_acr')) {
+  		
+  			// clear an abandoned cart for the current user
+  			//
+	  		$this->customer->clearAbandonedCart();	
+	  	}
+    	///karapuz]]></add>
+		</operation>
+	</file>
+	<file name="system/library/customer.php">
+		<operation>
+			<search position="after" index="1"><![CDATA[$this->db->query("UPDATE " . DB_PREFIX . "customer SET cart = '"]]></search>
+			<add><![CDATA[				//karapuz
+				if ($this->db->isKaInstalled('ka_acr')) {
+					$this->saveAbandonedCart();
+				}
+				///karapuz]]></add>
+		</operation>
+		<operation>
+			<search position="after" index="1"><![CDATA[unset($this->session->data['customer_id'])]]></search>
+			<add><![CDATA[		//karapuz
+  		if ($this->db->isKaInstalled('ka_acr')) {
+  			$this->session->data['ka_abandoned_info'] = false;
+  		}
+  		///karapuz]]></add>
+		</operation>
+		<operation>
+			<search position="before" index="1"><![CDATA[public function getEmail(]]></search>
+			<add><![CDATA[	//karapuz
+	public static $ka_token_prefix = 'ka-';
+	
+  	public function loginGuest($abandoned_cart) {
+  	
+  		if (empty($abandoned_cart)) {
+  			trigger_error("loginGuest: empty parameter");
+  			return false;
+  		}
+  	
+  		$this->session->data['cart'] = array();
+
+		if (!empty($abandoned_cart['cart'])) {
+								
+			foreach ($abandoned_cart['cart'] as $key => $value) {
+				if (!array_key_exists($key, $this->session->data['cart'])) {
+					$this->session->data['cart'][$key] = $value;
+				} else {
+					$this->session->data['cart'][$key] += $value;
+				}
+			}			
+		}
+		
+		return true;
+  	}
+	
+  	
+  	public function clearAbandonedCartByOrderid($order_id) {
+  		
+  		$qry = $this->db->query("SELECT abandoned_cart_id FROM " . DB_PREFIX . "ka_abandoned_carts WHERE 
+  			order_id = '" . intval($order_id) . "'"
+  		);
+  		
+  		if (!empty($qry->row)) {
+  			$this->clearAbandonedCart($qry->row['abandoned_cart_id']);
+  			return true;
+  		}
+  		
+  		return false;
+  	}
+  	
+  	
+  	public function clearAbandonedCart($abandoned_cart_id = null, $hard_clearing = false) {
+  	
+  		if ($abandoned_cart_id === null) {
+  			if (!empty($this->session->data['ka_abandoned_info'])) {
+  				$abandoned_cart_id = $this->session->data['ka_abandoned_info']['abandoned_cart_id'];
+  				
+  				if (empty($this->session->data['ka_abandoned_info']['customer_id'])) {
+  					$hard_clearing = true;
+  				}
+  			}
+  		}
+  	
+  		if ($hard_clearing) {
+			$this->db->query("DELETE FROM " . DB_PREFIX . "ka_abandoned_carts WHERE
+				abandoned_cart_id = " . intval($abandoned_cart_id)
+			);
+		} else {
+			$this->db->query("UPDATE " . DB_PREFIX . "ka_abandoned_carts SET
+				cart = '' WHERE
+					abandoned_cart_id = " . intval($abandoned_cart_id)
+			);
+		}
+  	}
+  	
+	/*
+		regular users can be identified by customer_id.
+		guest users have customer_id = 0, store_id = <store_id>, email = <email>.
+	
+		PARAMETERS:
+			$cart     - array
+			$customer - array
+	*/
+	
+	public function saveAbandonedCart($cart = null, $customer = null, $order_id = 0) {
+		static $last_cart_hash = null;
+
+		// 1/3 initialization
+		//		
+		if ($cart === null) {
+			if (empty($this->session->data['cart'])) {
+				$cart = array();
+			} else {
+				$cart = $this->session->data['cart'];
+			}
+		}
+		
+		if (empty($this->session->data['ka_abandoned_info'])) {
+			$this->session->data['ka_abandoned_info'] = array(
+				'abandoned_cart_id' => 0,
+				'customer_id'       => 0
+			);
+		}
+	
+		if ($customer === null) {
+			
+			if (!empty($this->customer_id)) {
+			
+				$customer = array(
+					'customer_id' => $this->customer_id,
+					'firstname'   => $this->firstname,
+					'lastname'    => $this->lastname,
+					'email'       => $this->email
+				);
+			} elseif (!empty($this->session->data['ka_abandoned_info']['abandoned_cart_id'])) {
+				$qry = $this->db->query("SELECT customer_id, firstname, lastname, email FROM " . DB_PREFIX . "ka_abandoned_carts
+					WHERE abandoned_cart_id = " . intval($this->session->data['ka_abandoned_info']['abandoned_cart_id'])
+				);
+					
+				$customer = $qry->row;
+			}
+		}
+
+		if (empty($customer['email'])) {
+			return false;
+		}
+
+		// 2/3 find abandoned cart record or create a new one
+		//
+		$customer_id = (empty($customer['customer_id']) ? 0 : intval($customer['customer_id']));
+		$language_id = $this->config->get('config_language_id');
+		$email       = $customer['email'];
+		$store_id    = $this->config->get('config_store_id');
+
+		// skip saving cart for previously used parameters
+		//
+		$cart_hash = md5(serialize($cart) . $customer_id . $email . $order_id);
+		if (is_null($last_cart_hash)) {
+			$last_cart_hash = $cart_hash;
+		} else {
+			if ($cart_hash == $last_cart_hash) {
+				return true;
+			}
+		}
+		
+		$where = "customer_id = '" . intval($customer_id) . "'";
+		if (empty($customer_id)) {
+			$where .= " AND store_id = '" . intval($store_id) . "' AND email = '" . $this->db->escape($email) . "'";
+		}
+		$qry = $this->db->query("SELECT abandoned_cart_id FROM " . DB_PREFIX . "ka_abandoned_carts 
+			WHERE $where"
+		);
+		
+		if (empty($qry->row)) {
+			$salt = self::generateAcrSalt();
+		
+			$this->db->query("INSERT INTO " . DB_PREFIX . "ka_abandoned_carts SET
+				salt = '" . $this->db->escape($salt) . "',
+				customer_id = '" . intval($customer_id) . "',
+				store_id = '" . intval($store_id) . "',
+				email = '" . $this->db->escape($email) . "'"
+			);
+			
+			$abandoned_cart_id = $this->db->getLastId();
+			
+		} else {
+			$abandoned_cart_id = $qry->row['abandoned_cart_id'];
+		}
+		
+		// Delete old abandoned cart for guest users if the id does not match the current user.
+		// We do not delete abandoned carts of registered users.
+		//
+		if (!empty($this->session->data['ka_abandoned_info']['abandoned_cart_id'])
+			&& empty($this->session->data['ka_abandoned_info']['customer_id'])
+		) 
+		{
+			if ($abandoned_cart_id != $this->session->data['ka_abandoned_info']['abandoned_cart_id']) 
+			{
+				$this->clearAbandonedCart($this->session->data['ka_abandoned_info']['abandoned_cart_id'], true);
+			}
+		}
+
+		$this->session->data['ka_abandoned_info'] = array(
+			'abandoned_cart_id' => $abandoned_cart_id,
+			'customer_id'       => $customer_id
+		);
+		
+		// 3/3 Update the record with new data
+		//
+		foreach (array('firstname', 'lastname', 'email') as $v) {
+			$customer[$v] = (isset($customer[$v]) ? trim($customer[$v]) : '');
+		}
+		
+		$this->db->query("UPDATE " . DB_PREFIX . "ka_abandoned_carts SET
+			language_id = '" .intval($language_id) ."',
+			email = '" . $this->db->escape($customer['email']) . "',
+			firstname = '" . $this->db->escape($customer['firstname']) . "',
+			lastname = '" . $this->db->escape($customer['lastname']) . "',
+			cart = '" . $this->db->escape(isset($cart) ? serialize($cart) : '') . "',
+			order_id = " . intval($order_id) . ",
+			last_visited = NOW()
+			WHERE abandoned_cart_id = '" . intval($abandoned_cart_id) ."'"
+		);
+
+		return true;
+	}
+	
+	public static function generateAcrSalt() {
+		$salt = substr(md5(uniqid(rand(), true)), 0, 16);
+		
+		return $salt;
+	}
+	///karapuz]]></add>
+		</operation>
+	</file>
+</modification>

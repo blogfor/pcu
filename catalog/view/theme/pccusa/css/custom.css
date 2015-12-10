@@ -1,0 +1,62 @@
+/* CUSTOM CSS Document */
+
+
+/*-------CART PAGE----------------*/
+table.radio{
+width:100%;
+font-size:14px;
+}
+.highlight td input[type="radio"]{
+padding: 0px;
+margin: -6px 0 0px 0;
+}
+.cart-total{
+border-top: 1px solid #ddd;
+padding-top:10px;
+}
+.shipping-table td{
+line-height:40px;
+font-size:14px;
+}
+.shipping-table td input[type="text"], .shipping-table td select{
+line-height:25px !important;
+font-size:14px;
+height:30px !important;
+margin-left:5px;
+}
+.action-button{
+display: inline-block;
+text-decoration: none;
+color: #FFF;
+background-color:#FF1A1A;
+font-size: 12px;
+font-family: "robotolight";
+font-weight: 300;
+text-transform: uppercase;
+padding: 5px 16px;
+border-radius: 3px;
+border:0;
+transition: all 0.2s ease-in-out 0s;
+margin-bottom:5px;
+}
+
+/*-------- CHECKOUT PAGE ----------------*/
+
+.checkout-steps{
+padding:10px 0;
+}
+.steps-heading{
+font-size:14px;
+font-weight:600;
+}
+span.required{
+	color:#F00;
+	
+}
+span.error{
+	color:#F00;
+	font-size:14px;
+	line-height:30px;
+}
+
+
