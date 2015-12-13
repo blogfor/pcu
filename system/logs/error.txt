@@ -102,3 +102,24 @@
 2015-12-07 21:27:22 - PHP Notice:  session_start(): ps_files_cleanup_dir: opendir(/shared/sessions) failed: Permission denied (13) in /mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/system/library/session.php on line 11
 2015-12-07 21:27:23 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/admin/index.php:85) in /mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/vqmod/vqcache/vq2-system_engine_controller.php on line 27
 2015-12-07 21:27:23 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/admin/index.php:85) in /mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/vqmod/vqcache/vq2-system_engine_controller.php on line 28
+2015-12-12 21:10:41 - PHP Notice:  Undefined variable: GOLD_PRICE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 84
+2015-12-12 21:10:41 - PHP Notice:  Undefined variable: MAN_CHARGE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 87
+2015-12-12 21:10:41 - PHP Notice:  Undefined variable: diamond_price in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 90
+2015-12-12 21:27:26 - PHP Notice:  Undefined variable: GOLD_PRICE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 114
+2015-12-12 21:27:26 - PHP Notice:  Undefined variable: MAN_CHARGE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 117
+2015-12-12 21:27:26 - PHP Notice:  Undefined variable: diamond_price in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 120
+2015-12-13 3:01:07 - PHP Notice:  Undefined variable: results in C:\xampp\htdocs\pcu\catalog\controller\product\search.php on line 472
+2015-12-13 3:01:16 - PHP Notice:  Undefined variable: results in C:\xampp\htdocs\pcu\catalog\controller\product\search.php on line 472
+2015-12-13 3:01:28 - PHP Notice:  Undefined variable: results in C:\xampp\htdocs\pcu\catalog\controller\product\search.php on line 472
+2015-12-13 3:17:33 - PHP Notice:  Undefined variable: GOLD_PRICE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 239
+2015-12-13 3:17:33 - PHP Notice:  Undefined variable: MAN_CHARGE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 242
+2015-12-13 3:17:33 - PHP Notice:  Undefined variable: diamond_price in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 245
+2015-12-13 3:20:11 - PHP Notice:  Undefined variable: GOLD_PRICE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 169
+2015-12-13 3:20:11 - PHP Notice:  Undefined variable: MAN_CHARGE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 172
+2015-12-13 3:20:11 - PHP Notice:  Undefined variable: diamond_price in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 175
+2015-12-13 3:20:35 - PHP Notice:  Undefined variable: GOLD_PRICE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 169
+2015-12-13 3:20:35 - PHP Notice:  Undefined variable: MAN_CHARGE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 172
+2015-12-13 3:20:35 - PHP Notice:  Undefined variable: diamond_price in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 175
+2015-12-13 3:23:36 - PHP Notice:  Undefined variable: GOLD_PRICE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 167
+2015-12-13 3:23:36 - PHP Notice:  Undefined variable: MAN_CHARGE in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 170
+2015-12-13 3:23:36 - PHP Notice:  Undefined variable: diamond_price in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\product\product.tpl on line 173

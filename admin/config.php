@@ -1,30 +1,30 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://pccusa.indiadootpmg.com/admin/');
-define('HTTP_CATALOG', 'http://pccusa.indiadootpmg.com/');
+define('HTTP_SERVER', 'http://localhost/pcu/admin/');
+define('HTTP_CATALOG', 'http://localhost/pcu/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://pccusa.indiadootpmg.com/admin/');
-define('HTTPS_CATALOG', 'http://pccusa.indiadootpmg.com/');
+define('HTTPS_SERVER', 'http://localhost/pcu/admin/');
+define('HTTPS_CATALOG', 'http://localhost/pcu/');
 
 // DIR
-define('DIR_APPLICATION', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/admin/');
-define('DIR_SYSTEM', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/system/');
-define('DIR_DATABASE', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/system/database/');
-define('DIR_LANGUAGE', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/admin/language/');
-define('DIR_TEMPLATE', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/admin/view/template/');
-define('DIR_CONFIG', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/system/config/');
-define('DIR_IMAGE', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/image/');
-define('DIR_CACHE', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/system/cache/');
-define('DIR_DOWNLOAD', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/download/');
-define('DIR_LOGS', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/system/logs/');
-define('DIR_CATALOG', '/mounted-storage/home127/sub007/sc71544-XPPQ/pccusa/catalog/');
+define('DIR_APPLICATION', 'C:\xampp\htdocs\pcu/admin/');
+define('DIR_SYSTEM', 'C:\xampp\htdocs\pcu/system/');
+define('DIR_DATABASE', 'C:\xampp\htdocs\pcu/system/database/');
+define('DIR_LANGUAGE', 'C:\xampp\htdocs\pcu/admin/language/');
+define('DIR_TEMPLATE', 'C:\xampp\htdocs\pcu/admin/view/template/');
+define('DIR_CONFIG', 'C:\xampp\htdocs\pcu/system/config/');
+define('DIR_IMAGE', 'C:\xampp\htdocs\pcu/image/');
+define('DIR_CACHE', 'C:\xampp\htdocs\pcu/system/cache/');
+define('DIR_DOWNLOAD', 'C:\xampp\htdocs\pcu/download/');
+define('DIR_LOGS', 'C:\xampp\htdocs\pcu/system/logs/');
+define('DIR_CATALOG', 'C:\xampp\htdocs\pcu/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysql');
-define('DB_HOSTNAME', 'mysql1064.servage.net');
-define('DB_USERNAME', 'pccusa');
-define('DB_PASSWORD', 'pccusablogfor2015');
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
 define('DB_DATABASE', 'pccusa');
 define('DB_PREFIX', 'opc_');
 ?>

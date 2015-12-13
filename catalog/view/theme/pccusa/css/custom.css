@@ -59,4 +59,43 @@ span.error{
 	line-height:30px;
 }
 
+/*---PRODUCT DETAILS----------*/
+.rating-review-box, .compair-box{
+	padding:0px 0 7px 0;
+}
+.sharethis-box, .wishlist-box{
+ 	padding:7px 0 0px 0;
+}
 
+.price, .price-tax{
+	width:100%;
+	display:block;
+	padding-bottom:10px;
+			
+}
+.manufacturer-box,.model-box, .reward-box{
+	line-height:40px !important;
+	font-size:16px !important;	
+}
+.manufacturer-box strong,.model-box strong, .reward-box strong{
+	color:#333 !important;
+	font-size:18px !important;
+}
+
+.attribute_header{
+	background-color:#F3F3F3;
+	font-weight:600;
+}
+ .MagicZoomBigImageCont div{
+   font-size:1px !important;
+   font-color:#FFF;	   
+}
+.MagicToolboxMessage{font-size:12px;}
+
+div.tags{
+	padding-left:26px;
+	background-image:url('images/tags.png');
+	background-repeat:no-repeat;
+	line-height:30px;
+	margin-bottom:10px;
+}
