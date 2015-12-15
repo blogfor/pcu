@@ -99,3 +99,21 @@ div.tags{
 	line-height:30px;
 	margin-bottom:10px;
 }
+
+/*----LOGIN PAGE----------------*/
+
+.heading-text{
+	line-height:50px;
+}
+.register-form{
+	width:100%;
+}
+.register-form td{
+	font-size:15px;
+	line-height:24px;
+	padding-bottom:10px;
+		
+}
+.register-form td:nth-child(1){	
+width:180px;
+}

@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <title><?php echo $title; ?></title>
 <base href="<?php echo $base; ?>" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <?php if ($description) { ?>
 <meta name="description" content="<?php echo $description; ?>" />
 <?php } ?>
@@ -20,6 +22,7 @@
 <?php foreach ($styles as $style) { ?>
 <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
+
 
 
 <!-- Bootstrap CSS  -->
@@ -40,9 +43,10 @@
 <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
 <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
+
 <?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
-
+<?php } ?>
 
 
 <script type="text/javascript" src="catalog/view/theme/pccusa/js/jquery.migrate.js"></script>
@@ -61,7 +65,7 @@
 <script type="text/javascript" src="catalog/view/theme/pccusa/js/jquery.parallax.js"></script>
 <script type="text/javascript" src="catalog/view/theme/pccusa/js/script.js"></script>
 
-<?php } ?>
+
 <!--[if IE 7]> 
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie7.css" />
 <![endif]-->

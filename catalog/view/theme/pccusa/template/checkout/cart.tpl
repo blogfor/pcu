@@ -1,7 +1,5 @@
 <?php echo $header; ?>
 
-
-
 <?php if ($attention) { ?>
 <div class="attention container">
     <?php echo $attention; ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" />
@@ -13,31 +11,28 @@
 </div>
 <?php } ?>
 <?php if ($error_warning) { ?>
-<div class="warning container"><?php echo $error_warning; ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>
+<div class="warning container"><?php echo $error_warning; ?>
+<img src="catalog/view/theme/default/image/close.png" alt="" class="close" />
+</div>
 <?php } ?>
-
-
 
 
 
 <div id="content" class="container">
     
-<?php echo $content_top; ?>
-<div class="breadcrumb">
-  <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-  <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-  <?php } ?>
-</div>  
-  
-  
+	<?php echo $content_top; ?>
+    <div class="breadcrumb">
+      <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+      <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+      <?php } ?>
+    </div>  
   
 
-
-<h1 class="big-title"><?php echo $heading_title; ?>      
-  <?php if ($weight) { ?>
-  &nbsp;(<?php echo $weight; ?>)
-  <?php } ?>
-</h1>
+    <h1 class="big-title"><?php echo $heading_title; ?>      
+      <?php if ($weight) { ?>
+      &nbsp;(<?php echo $weight; ?>)
+      <?php } ?>
+    </h1>
 
 
       
@@ -214,6 +209,11 @@
     </div>
   </div>
   <?php } ?>
+  
+  
+  
+  
+  
   <div class="cart-total">
     <table id="total">
       <?php foreach ($totals as $total) { ?>

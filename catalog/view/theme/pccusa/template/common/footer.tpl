@@ -9,10 +9,10 @@
             <div class="footer-widget link-widget">
             <h4>Information</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Delivery Information</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="index.php?route=information/information&information_id=4">About Us</a></li>
+              <li><a href="index.php?route=information/information&information_id=6">Delivery Information</a></li>
+              <li><a href="index.php?route=information/information&information_id=3">Privacy Policy</a></li>
+              <li><a href="index.php?route=information/information&information_id=5">Terms &amp; Conditions</a></li>
             </ul>
           </div>
         </div>
