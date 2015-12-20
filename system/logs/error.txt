@@ -227,3 +227,7 @@
 2015-12-14 9:30:06 - PHP Notice:  Undefined variable: script in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\common\header.tpl on line 48
 2015-12-14 9:30:18 - PHP Notice:  Undefined variable: script in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\common\header.tpl on line 48
 2015-12-15 8:49:57 - PHP Notice:  Undefined variable: script in C:\xampp\htdocs\pcu\catalog\view\theme\pccusa\template\common\header.tpl on line 48
+2015-12-16 9:00:18 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\pcu\system\library\mail.php on line 150
+2015-12-16 9:00:18 - PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\pcu\index.php:107) in C:\xampp\htdocs\pcu\vqmod\vqcache\vq2-system_engine_controller.php on line 27
+2015-12-16 9:00:18 - PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\pcu\index.php:107) in C:\xampp\htdocs\pcu\vqmod\vqcache\vq2-system_engine_controller.php on line 28
+2015-12-19 22:05:05 - PHP Warning:  mail() [<a href='function.mail'>function.mail</a>]: Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\pcu\system\library\mail.php on line 150

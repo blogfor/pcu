@@ -1,12 +1,31 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
+<?php echo $header; ?>
+
+<!-- Start Page Banner -->
+<div class="page-banner no-subtitle">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+    <h2><?php echo $heading_title; ?></h2>
+</div>
+    <div class="col-md-6" style="text-align: right;">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <?php if ($profiles) { ?>
+    <?php } ?>                                            
+    </div>
+</div>
+</div>
+</div>
+<!-- End Page Banner -->
+        
+
+
+<div id="content">
+ <div class="container">
+<?php echo $content_top; ?>
+<?php echo $column_left; ?>
+<?php echo $column_right; ?>
+
+   <?php if ($profiles) { ?>
 
     <table class="list">
         <thead>
@@ -44,5 +63,7 @@
   <div class="buttons">
     <div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
   </div>
-  <?php echo $content_bottom; ?></div>
+  <?php echo $content_bottom; ?>
+  </div>
+</div>
 <?php echo $footer; ?>

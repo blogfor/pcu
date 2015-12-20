@@ -1,16 +1,39 @@
 <?php echo $header; ?>
-<?php if ($success) { ?>
-<div class="success"><?php echo $success; ?></div>
-<?php } ?>
-<?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
+
+
+<!-- Start Page Banner -->
+<div class="page-banner no-subtitle">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+    <h2><?php echo $text_my_account; ?></h2>
+</div>
+    <div class="col-md-6" style="text-align: right;">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <h2><?php echo $text_my_account; ?></h2>
+    <?php } ?>                                            
+    </div>
+</div>
+</div>
+</div>
+<!-- End Page Banner -->
+        
+        
+
+
+
+<?php //echo $column_left; ?><?php //echo $column_right; ?>
+
+<div id="content" class="container">
+<?php echo $content_top; ?>
+  
+  
+  <?php if ($success) { ?>
+<div class="success container"><?php echo $success; ?></div>
+<?php } ?>
+
+
+ 
   <div class="content">
     <ul>
       <li><a href="<?php echo $edit; ?>"><?php echo $text_edit; ?></a></li>

@@ -19,7 +19,7 @@
             if ($("input[name='payment_method']").val() == '1') {
                 location = '<?php echo $continue ?>';
             } else {
-                $('#amazon-wallet-widget').before('<div class="warning"><?php echo $error_payment_method ?></div>');
+                $('#amazon-wallet-widget').before('<div class="warning container"><?php echo $error_payment_method ?></div>');
             }
         });
         

@@ -1,5 +1,11 @@
 /* CUSTOM CSS Document */
 
+.warning{
+	background-color:#FDF1D7;
+	color:#600;
+	margin-top:15px;
+	padding:10px 0 10px 10px;;	
+}
 
 /*-------CART PAGE----------------*/
 table.radio{
@@ -116,4 +122,14 @@ div.tags{
 }
 .register-form td:nth-child(1){	
 width:180px;
+}
+
+table.form{margin-top:20px;
+}
+table.form td{
+	padding:5px 0 5px 5px;	
+}
+.box-heading{
+	    font-size: 22px;
+    line-height: 28px;
 }

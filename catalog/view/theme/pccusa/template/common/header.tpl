@@ -149,7 +149,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
               <li> <a class="" data-placement="bottom" title="" href="<?php echo $account; ?>"><?php echo $text_account; ?></a> </li>
               <li> <a class="" data-placement="bottom" title="" href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a> </li>
               <li> <a class="" data-placement="bottom" title="" href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a> </li>
-              <li> <a class="" data-placement="bottom" title="" href="#">Contact Us</a> </li>
+              <li> <a class="" data-placement="bottom" title="" href="index.php?route=information/contact">Contact Us</a> </li>
             </ul>
           </div>
         </div>
@@ -204,10 +204,16 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 		<?php } ?>
                 <!-- Search Widget -->
                 <div class="widget widget-search  navbar-right">
-                <form action="#">
+               <!-- <form action="#">
                     <input type="search" placeholder="Enter Keywords..." />
                     <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
-                </form>
+                </form>-->
+                
+                 <div id="search">
+                          
+                            <input type="search" name="search" placeholder="Search" value="">
+                            <button class="search-btn button-search" type="submit"><i class="fa fa-search"></i></button>
+                 </div>
                  
                 </div>
                 
@@ -224,7 +230,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
   <!-- End Header --> 
   
     <?php if ($error) { ?>    
-    <div class="warning">
+    <div class="warning container">
     <?php echo $error ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" />
     </div>
     

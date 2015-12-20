@@ -1,12 +1,33 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
+<?php echo $header; ?>
+<!-- Start Page Banner -->
+<div class="page-banner no-subtitle">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+    <h2><?php echo $heading_title; ?></h2>
+</div>
+    <div class="col-md-6" style="text-align: right;">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <table class="list">
+    <?php echo $breadcrumb['separator']; ?>
+    <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+    <?php } ?>                                            
+    </div>
+</div>
+</div>
+</div>
+<!-- End Page Banner -->
+       
+        
+
+<div id="content">
+   <div class="container">
+    <?php echo $content_top; ?>
+    
+    <?php echo $column_left; ?>
+    <?php echo $column_right; ?>
+
+
+  <table class="list" style="width:100%">
     <thead>
       <tr>
         <td class="left" colspan="2"><?php echo $text_order_detail; ?></td>
@@ -28,7 +49,7 @@
       </tr>
     </tbody>
   </table>
-  <table class="list">
+  <table class="list" style="width:100%">
     <thead>
       <tr>
         <td class="left"><?php echo $text_payment_address; ?></td>
@@ -46,7 +67,7 @@
       </tr>
     </tbody>
   </table>
-  <table class="list">
+  <table class="list" width="100%">
     <thead>
       <tr>
         <td class="left"><?php echo $column_name; ?></td>
@@ -101,7 +122,7 @@
     </tfoot>
   </table>
   <?php if ($comment) { ?>
-  <table class="list">
+  <table class="list" width="100%">
     <thead>
       <tr>
         <td class="left"><?php echo $text_comment; ?></td>
@@ -116,7 +137,7 @@
   <?php } ?>
   <?php if ($histories) { ?>
   <h2><?php echo $text_history; ?></h2>
-  <table class="list">
+  <table class="list" width="100%">
     <thead>
       <tr>
         <td class="left"><?php echo $column_date_added; ?></td>
@@ -135,8 +156,13 @@
     </tbody>
   </table>
   <?php } ?>
+  
+  <br /> <br />
+  
   <div class="buttons">
     <div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
   </div>
-  <?php echo $content_bottom; ?></div>
+  <?php echo $content_bottom; ?>
+  </div>
+</div>
 <?php echo $footer; ?> 

@@ -5,11 +5,11 @@
 <?php } ?>
 
 <?php if ($success) { ?>
-    <div class="success"><?php echo $success; ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>
+    <div class="success container"><?php echo $success; ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>
 <?php } ?>
 
 <?php if ($error_warning) { ?>
-    <div class="warning"><?php echo $error_warning; ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>
+    <div class="warning container"><?php echo $error_warning; ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>
 <?php } ?>
 
 <?php echo $column_left; ?>
@@ -90,7 +90,7 @@
         
 <?php if($has_shipping) { ?>
     <?php if(!isset($shipping_methods)) { ?>
-        <div class="warning"><?php echo $error_no_shipping ?></div>
+        <div class="warning container"><?php echo $error_no_shipping ?></div>
     <?php } else { ?>
         <div class="cart-module">
             <div id="shipping" class="content" style="display: block;">

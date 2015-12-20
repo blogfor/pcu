@@ -1,5 +1,5 @@
 <?php if ($error_warning) { ?>
-<div class="warning"><?php echo $error_warning; ?></div>
+<div class="warning container"><?php echo $error_warning; ?></div>
 <?php } ?>
 <?php if ($payment_methods) { ?>
 <p><?php echo $text_payment_method; ?></p>

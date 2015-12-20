@@ -1,16 +1,18 @@
 <?php if (!isset($redirect)) { ?>
 <div class="checkout-product">
-  <table>
-    <thead>
+<br />
+  <table class="col-lg-12 col-md-12">
+    <thead style="    border-bottom: 1px #ccc solid; background-color: #ddd; font-weight: bold; line-height:35px;" > 
       <tr>
         <td class="name"><?php echo $column_name; ?></td>
         <td class="model"><?php echo $column_model; ?></td>
         <td class="quantity"><?php echo $column_quantity; ?></td>
-        <td class="price"><?php echo $column_price; ?></td>
+        <td class="price1"><?php echo $column_price; ?></td>
         <td class="total"><?php echo $column_total; ?></td>
       </tr>
     </thead>
     <tbody>
+    <tr> <td> </td></tr>
       <?php foreach ($products as $product) { ?>  
       <?php if($product['recurring']): ?>
         <tr>

@@ -12,7 +12,7 @@
     //--></script>
     <?php } else { ?>
     
-    <div class="warning"><?php echo $error_connection ?></div>
+    <div class="warning container"><?php echo $error_connection ?></div>
     
     <?php } ?>
 <?php } ?>

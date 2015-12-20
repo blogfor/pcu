@@ -1,10 +1,10 @@
 <?php echo $header; ?>
 
 <?php if ($success) { ?>
-<div class="success"><?php echo $success; ?></div>
+<div class="success container"><?php echo $success; ?></div>
 <?php } ?>
 <?php if ($error) { ?>
-<div class="warning"><?php echo $error; ?></div>
+<div class="warning container"><?php echo $error; ?></div>
 <?php } ?>
 
 <?php echo $column_left; ?><?php echo $column_right; ?>

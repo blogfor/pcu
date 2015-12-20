@@ -17,9 +17,9 @@
             $('div.warning').remove();
             
             if ($('input[name="addressSelected"]').val() == '0') {
-                $('#amazon-address-widget').before('<div class="warning"><?php echo $error_shipping_address ?></div>');
+                $('#amazon-address-widget').before('<div class="warning container"><?php echo $error_shipping_address ?></div>');
             } else if($('input[name="shipping_method"]:checked').length == 0) {
-                $('#amazon-address-widget').before('<div class="warning"><?php echo $error_shipping ?></div>');
+                $('#amazon-address-widget').before('<div class="warning container"><?php echo $error_shipping ?></div>');
             } else {
                 $.ajax({
                     url: 'index.php?route=payment/amazon_checkout/set_shipping',
@@ -54,7 +54,7 @@
                     $('.shipping-methods').html('');
                 
                     if (data.error) {
-                        $('#amazon-address-widget').before('<div class="warning">' + data.error + '</div>');
+                        $('#amazon-address-widget').before('<div class="warning container">' + data.error + '</div>');
                     } else if (data.quotes) {
                         var html = '';
                         html += '<table class="radio">';

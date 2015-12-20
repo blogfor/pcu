@@ -1,15 +1,41 @@
 <?php echo $header; ?>
+
+<!-- Start Page Banner -->
+		<div class="page-banner no-subtitle">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h2><?php echo $heading_title; ?></h2>
+					</div>
+                                    <div class="col-md-6" style="text-align: right;">
+                                            <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+                                            <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+                                            <?php } ?>                                            
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Banner -->
+
+
+
 <?php if ($error_warning) { ?>
-<div class="warning"><?php echo $error_warning; ?></div>
+<div class="warning container"><?php echo $error_warning; ?>
+</div>
 <?php } ?>
-<?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
+
+
+
+
+<div id="content" >
+
+
+
+<div class="container">
+  <?php echo $content_top; ?>
+  <?php echo $column_right; ?>
+  <?php echo $column_left; ?>
+
   <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
     <h2><?php echo $text_your_details; ?></h2>
     <div class="content">
@@ -55,5 +81,9 @@
       </div>
     </div>
   </form>
-  <?php echo $content_bottom; ?></div>
+  <?php echo $content_bottom; ?>
+</div>  
+  
+  </div>
+  
 <?php echo $footer; ?>

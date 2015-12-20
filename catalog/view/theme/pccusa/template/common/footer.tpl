@@ -21,7 +21,7 @@
           <div class="footer-widget link-widget">
             <h4>Customer Service</h4>
             <ul>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="index.php?route=information/contact">Contact Us</a></li>
               <li><a href="#">Returns</a></li>
               <li><a href="#">Site Map</a></li>
             </ul>

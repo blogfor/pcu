@@ -1,8 +1,6 @@
 <?php echo $header; ?>
 
-
-
-    <!-- PAGE HEADER TITLE  -->
+<!-- PAGE HEADER TITLE  -->
 <div class="page-banner no-subtitle">
     <div class="container">
         <div class="row">
@@ -17,13 +15,15 @@
         </div>
     </div>
 </div>
-    <!-- End PAGE HEADER TITLE -->
+<!-- End PAGE HEADER TITLE -->
+    
+    
 
 <?php if ($success) { ?>
-<div class="success"><?php echo $success; ?></div>
+<div class="success container"><?php echo $success; ?></div>
 <?php } ?>
 <?php if ($error_warning) { ?>
-<div class="warning"><?php echo $error_warning; ?></div>
+<div class="warning container"><?php echo $error_warning; ?></div>
 <?php } ?>
 
 <?php echo $column_right; ?>

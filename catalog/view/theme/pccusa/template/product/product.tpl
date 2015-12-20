@@ -478,11 +478,11 @@ $('#button-review').bind('click', function() {
 		},
 		success: function(data) {
 			if (data['error']) {
-				$('#review-title').after('<div class="warning">' + data['error'] + '</div>');
+				$('#review-title').after('<div class="warning container">' + data['error'] + '</div>');
 			}
 			
 			if (data['success']) {
-				$('#review-title').after('<div class="success">' + data['success'] + '</div>');
+				$('#review-title').after('<div class="success container">' + data['success'] + '</div>');
 								
 				$('input[name=\'name\']').val('');
 				$('textarea[name=\'text\']').val('');

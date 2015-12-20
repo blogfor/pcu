@@ -1,13 +1,34 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
+<?php echo $header; ?>
+    <!-- PAGE HEADER TITLE  -->
+<div class="page-banner no-subtitle">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                 <h2><?php echo $heading_title; ?></h2>
+            </div>
+            <div class="col-md-6 bredcamp">
+                <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+                <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+            <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- End PAGE HEADER TITLE -->
+    
+    
+    
+<?php //echo $column_left; ?>
+<?php //echo $column_right; ?>
+
+
+
+<div id="content" class="container">
+<?php echo $content_top; ?>
+ 
+  
   <b><?php echo $text_critea; ?></b>
-  <div class="content">
+  <div class="content col-lg-12 col-md-12">
     <p><?php echo $entry_search; ?>
       <?php if ($search) { ?>
       <input type="text" name="search" value="<?php echo $search; ?>" />
@@ -38,6 +59,7 @@
         <?php } ?>
         <?php } ?>
       </select>
+      <br />
       <?php if ($sub_category) { ?>
       <input type="checkbox" name="sub_category" value="1" id="sub_category" checked="checked" />
       <?php } else { ?>
@@ -52,12 +74,23 @@
     <?php } ?>
     <label for="description"><?php echo $entry_description; ?></label>
   </div>
+  
+  
+  
+  
   <div class="buttons">
     <div class="right"><input type="button" value="<?php echo $button_search; ?>" id="button-search" class="button" /></div>
   </div>
+  
+  
+   
+  <div class="hr5" style="margin-top:30px; margin-bottom:20px;"></div>
+  
   <h2><?php echo $text_search; ?></h2>
+  
+  
   <?php if ($products) { ?>
-  <div class="product-filter">
+  <div class="product-filter" style="display:none;">
     <div class="display"><b><?php echo $text_display; ?></b> <?php echo $text_list; ?> <b>/</b> <a onclick="display('grid');"><?php echo $text_grid; ?></a></div>
     <div class="limit"><?php echo $text_limit; ?>
       <select onchange="location = this.value;">
@@ -83,8 +116,45 @@
     </div>
   </div>
   <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
-  <div class="product-list">
-    <?php foreach ($products as $product) { ?>
+  <div class="hr5" style="margin-top:30px; margin-bottom:20px;"></div>
+  
+  
+   <ul id="portfolio-list" data-animated="fadeIn">
+        <?php foreach ($products as $product) { ?>
+        <li>
+            
+          <?php if ($product['thumb']) { ?>                          
+          <div class="image product-thumb-image">
+              <a href="<?php echo $product['href']; ?>">
+                  <img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" />
+              </a>
+          </div>
+          <?php } ?>
+            <div class="portfolio-details"> 
+                    <a href="<?php echo $product['href']; ?>">
+                        <h4><?php echo $product['name']; ?></h4>
+                        <span class="thr">$ 700</span> <span><?php echo $product['price']; ?></span>
+                    </a> 
+            </div>
+            <div class="portfolio-item-content"> <span class="header"><?php echo $product['name']; ?></span>
+            <p class="body"><?php echo $product['description']; ?></p>
+            <p class="m-tb15"><a href="<?php echo $product['href']; ?>"><button type="button" class="btn btn-danger">View Details</button></a></p>
+            
+            <p class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');"><?php echo $button_wishlist; ?></a></p>
+            <p class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');"><?php echo $button_compare; ?></a></p>
+            <?php if ($product['rating']) { ?>
+             <div class="rating"><img src="catalog/view/theme/default/image/stars-<?php echo $product['rating']; ?>.png" alt="<?php echo $product['reviews']; ?>" /></div>
+            <?php } ?>
+            </div>
+        <a href="script:void(0);"  onclick="addToCart('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart more"></i></a> 
+        
+        </li>
+        <?php } ?>
+   </ul>
+  
+  
+  <!--<div class="product-list">
+    <?php //foreach ($products as $product) { ?>
     <div>
       <?php if ($product['thumb']) { ?>
       <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
@@ -111,8 +181,10 @@
       <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');"><?php echo $button_wishlist; ?></a></div>
       <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');"><?php echo $button_compare; ?></a></div>
     </div>
-    <?php } ?>
-  </div>
+    <?php //} ?>
+  </div>-->
+  
+  
   <div class="pagination"><?php echo $pagination; ?></div>
   <?php } else { ?>
   <div class="content"><?php echo $text_empty; ?></div>
